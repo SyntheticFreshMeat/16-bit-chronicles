@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16-BIT CHRONICLES</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="game-container">
+        <div class="top-bar">
+            <div class="top-left">
+                <button id="saveBtn" class="top-btn">GUARDAR</button>
+                <button id="loadBtn" class="top-btn">CARGAR</button>
+            </div>
+
+            <h1>16-BIT CHRONICLES</h1>
+        </div>
+
+
+        <div id="location">
+            <!-- Opción A: imagen de localización -->
+            <img id="location-image" src="" alt="Location"
+                style="width:100%; image-rendering: pixelated; border: 2px solid #f5f5f5; margin-bottom: 10px;">
+
+            <h2 id="location-name"></h2>
+            <p id="location-desc"></p>
+        </div>
+
+
+        <div id="player-stats">
+            <p id="player-name"></p>
+            <p id="player-level"></p>
+            <p id="player-health"></p>
+            <p id="player-exp"></p>
+        </div>
+
+        
+
+        <!-- backpack button -->
+        <button id="backpackBtn" class="backpack-btn" aria-label="Open Backpack">
+            <img src="images/Mochila.png" alt="Backpack" />
+            <span id="backpackSlots" class="backpack-slots">0/0</span>
+        </button>
+
+        <div id="decisions"></div>
+        <p id="message"></p>
+    </div>
+
+    <!-- Backpack modal overlay -->
+    <div id="backpackOverlay" class="overlay hidden" aria-hidden="true">
+        <div class="modal">
+            <div class="modal-header">
+                <div class="modal-title">BACKPACK</div>
+                <button id="closeBackpackBtn" class="close-btn" aria-label="Close backpack">X</button>
+            </div>
+
+            <div class="modal-body">
+                <div id="backpackGrid" class="backpack-grid"></div>
+
+                <div class="divider"></div>
+
+                <div class="bag-list-title">ITEMS</div>
+                <div id="backpackList" class="backpack-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GAME OVER overlay -->
+    <div id="gameOverOverlay" class="overlay hidden" aria-hidden="true">
+        <div class="modal gameover-modal">
+            <div class="modal-header">
+                <div class="modal-title">GAME OVER</div>
+            </div>
+
+            <div class="modal-body gameover-body">
+                <p class="gameover-text">GAME OVER, MAN!</p>
+                <button id="retryBtn">INTENTAR DE NUEVO</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="newGameOverlay" class="overlay">
+        <div class="modal" style="max-width: 520px;">
+            <div class="modal-header">
+                <div class="modal-title">NUEVO JUEGO</div>
+            </div>
+            <div class="modal-body">
+                <p>Introduce tu nombre:</p>
+                <input id="playerNameInput" type="text" maxlength="16" placeholder="Introduce tu nombre">
+                <button id="startBtn">EMPEZAR</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
